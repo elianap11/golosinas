@@ -1,0 +1,20 @@
+@startuml
+class Pedido {
+    +EstadoPedido estado
+    +boolean esMayorista
+    +puedeCambiarEstado(EstadoPedido) boolean
+    +cambiarEstado(EstadoPedido)
+}
+
+class Usuario {
+    +String nombre
+}
+
+class Responsable {
+    +aprobarPedido(Pedido)
+    +rechazarPedido(Pedido)
+}
+
+Responsable --|> Usuario
+Pedido *-- EstadoPedido
+@enduml

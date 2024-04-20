@@ -1,0 +1,16 @@
+@startuml
+[*] --> BORRADOR
+BORRADOR --> PENDIENTE_APROBACION : enviado()
+PENDIENTE_APROBACION --> APROBADO : aprobarPedido()
+PENDIENTE_APROBACION --> RECHAZADO : rechazarPedido()
+
+note left of APROBADO
+  No se puede volver a estados
+  anteriores desde APROBADO
+end note
+
+note left of RECHAZADO
+  No se puede volver a estados
+  anteriores desde RECHAZADO  
+end note
+@enduml
